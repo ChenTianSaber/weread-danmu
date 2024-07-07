@@ -1,0 +1,29 @@
+{
+    "name": "webRequest.onAuthRequired Demo",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Demonstrates the webRequest.onAuthRequired listener to detect an authentication request and log the user into the designated site.",
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "src/content.js"
+            ],
+            "css": [
+                "src/style.css"
+            ]
+        }
+    ],
+    "permissions": [
+        "webRequest",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://weread.qq.com/*"
+    ]
+}
